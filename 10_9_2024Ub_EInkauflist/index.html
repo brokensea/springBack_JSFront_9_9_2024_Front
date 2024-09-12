@@ -1,0 +1,37 @@
+<!-- sagt browser das ist HTML document -->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Einkaufsliste</h1>
+    <section>
+        <form id="shoppingForm">
+            <label for="name">Name des Artikels:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="menge">Menge:</label>
+            <input type="number" id="menge" name="menge" required><br><br>
+
+            <label for="laden">Laden (Wo kaufen):</label>
+            <input type="text" id="laden" name="laden" required><br><br>
+
+            <label for="gekauft">Gekauft:</label>
+            <input type="checkbox" id="gekauft" name="gekauft"><br><br>
+
+            <button type="submit">Hinzufügen</button>
+        </form>
+    </section>
+
+
+    <footer></footer>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
