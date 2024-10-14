@@ -8,7 +8,7 @@ document.getElementById('shoppingForm').addEventListener('submit', (event) => {
 
     const newItem = { name, menge, laden, gekauft };
 
-    fetch('http://192.168.1.118:7878/api/v1/items/submit', {
+    fetch('http://192.168.1.118:8080/api/v1/items/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newItem)
@@ -64,7 +64,7 @@ function addItemToPage(item) {
 document.addEventListener('DOMContentLoaded', () => {
     async function getAllItems() {
         try {
-            const response = await fetch('http://192.168.1.118:7878/api/v1/items');
+            const response = await fetch('http://192.168.1.118:8080/api/v1/items');
             if (!response.ok) throw new Error('Network response was not OK');
 
             const items = await response.json();
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function deleteItem(itemId, listItem) {
-    fetch(`http://192.168.1.118:7878/api/v1/items/${itemId}`, {
+    fetch(`http://192.168.1.118:8080/api/v1/items/${itemId}`, {
         method: 'DELETE'
     })
         .then(response => {
@@ -125,7 +125,7 @@ function deleteItem(itemId, listItem) {
 
 // 发送 PUT 请求更新数据库中的 "Gekauft" 状态
 function updateItemGekauft(itemId, isGekauft) {
-    fetch(`http://192.168.1.118:7878/api/v1/items/${itemId}`, {
+    fetch(`http://192.168.1.118:8080/api/v1/items/${itemId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
